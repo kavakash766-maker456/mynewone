@@ -12,11 +12,11 @@ const MOCK_TASKS = [
 
 export const Tasks: React.FC = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 min-h-screen bg-white dark:bg-zinc-950 transition-colors">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-zinc-900 dark:text-white">Available Tasks</h1>
-          <p className="text-zinc-500 dark:text-zinc-400">Find tasks that match your skills and start earning.</p>
+          <h1 className="text-3xl font-bold text-zinc-900">Available Tasks</h1>
+          <p className="text-zinc-500">Find tasks that match your skills and start earning.</p>
         </div>
         <div className="flex gap-2">
           <div className="relative">
@@ -24,10 +24,10 @@ export const Tasks: React.FC = () => {
             <input 
               type="text" 
               placeholder="Search tasks..." 
-              className="pl-10 pr-4 py-2 border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+              className="pl-10 pr-4 py-2 border border-zinc-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
             />
           </div>
-          <button className="flex items-center gap-2 px-4 py-2 border border-zinc-200 dark:border-zinc-700 dark:bg-zinc-800 rounded-lg text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-700 text-zinc-900 dark:text-white transition-colors">
+          <button className="flex items-center gap-2 px-4 py-2 border border-zinc-200 rounded-lg text-sm font-medium hover:bg-zinc-50">
             <Filter size={18} /> Filter
           </button>
         </div>
@@ -40,27 +40,27 @@ export const Tasks: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05 }}
-            className="bg-white dark:bg-zinc-800 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-700 shadow-sm dark:shadow-lg hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all group cursor-pointer"
+            className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm hover:border-emerald-500/50 transition-all group cursor-pointer"
           >
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="flex-grow">
-                <h3 className="text-lg font-bold text-zinc-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors mb-2">{task.title}</h3>
-                <div className="flex flex-wrap gap-4 text-sm text-zinc-500 dark:text-zinc-400">
+                <h3 className="text-lg font-bold text-zinc-900 group-hover:text-emerald-600 transition-colors mb-2">{task.title}</h3>
+                <div className="flex flex-wrap gap-4 text-sm text-zinc-500">
                   <div className="flex items-center gap-1">
                     <Clock size={16} /> {task.time}
                   </div>
                   <div className="flex items-center gap-1">
                     <Star size={16} className="text-amber-400 fill-amber-400" /> {task.rating}
                   </div>
-                  <div className="bg-zinc-100 dark:bg-zinc-700 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider">Micro-task</div>
+                  <div className="bg-zinc-100 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider">Micro-task</div>
                 </div>
               </div>
               <div className="flex items-center justify-between md:justify-end gap-8">
                 <div className="text-right">
-                  <p className="text-xs font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-1">Reward</p>
-                  <p className="text-xl font-bold text-emerald-600 dark:text-emerald-400">${task.reward.toFixed(2)}</p>
+                  <p className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-1">Reward</p>
+                  <p className="text-xl font-bold text-emerald-600">${task.reward.toFixed(2)}</p>
                 </div>
-                <button className="px-6 py-2 bg-zinc-900 dark:bg-emerald-600 text-white rounded-lg text-sm font-medium hover:bg-zinc-800 dark:hover:bg-emerald-700 transition-all active:scale-95">
+                <button className="px-6 py-2 bg-zinc-900 text-white rounded-lg text-sm font-medium hover:bg-zinc-800 transition-all active:scale-95">
                   Start Task
                 </button>
               </div>

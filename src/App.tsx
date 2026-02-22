@@ -4,7 +4,6 @@ import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { Dashboard } from './pages/Dashboard';
 import { Tasks } from './pages/Tasks';
-import { AddTask } from './pages/AddTask';
 import { User } from './types';
 
 export default function App() {
@@ -66,14 +65,14 @@ export default function App() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-zinc-950 transition-colors">
+      <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="w-8 h-8 border-4 border-emerald-600 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-zinc-950 font-sans text-zinc-900 dark:text-white transition-colors">
+    <div className="min-h-screen flex flex-col bg-white font-sans text-zinc-900">
       <Navbar 
         user={user} 
         onLogin={startLoginFlow} 
@@ -85,14 +84,13 @@ export default function App() {
       <main className="flex-grow">
         {currentPage === 'home' && <Home onLogin={startLoginFlow} user={user} onNavigate={setCurrentPage} />}
         {currentPage === 'tasks' && <Tasks />}
-        {currentPage === 'add-task' && <AddTask user={user} onNavigate={setCurrentPage} />}
         {currentPage === 'dashboard' && user && <Dashboard user={user} />}
         {currentPage === 'dashboard' && !user && (
           <div className="max-w-7xl mx-auto px-4 py-20 text-center">
-            <h2 className="text-2xl font-bold mb-4 text-zinc-900 dark:text-white">Please login to view your dashboard</h2>
+            <h2 className="text-2xl font-bold mb-4">Please login to view your dashboard</h2>
             <button 
               onClick={startLoginFlow}
-              className="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors"
+              className="px-6 py-2 bg-emerald-600 text-white rounded-lg"
             >
               Login with Google
             </button>

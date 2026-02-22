@@ -7,15 +7,7 @@
 }
 
 @layer base {
-  :root {
-    color-scheme: light;
-  }
-
-  :root.dark {
-    color-scheme: dark;
-  }
-
   body {
-    @apply font-sans antialiased transition-colors duration-200;
+    @apply font-sans antialiased;
   }
 }
